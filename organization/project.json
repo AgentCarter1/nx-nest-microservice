@@ -1,0 +1,26 @@
+{
+  "name": "organization",
+  "$schema": "../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "organization/src",
+  "projectType": "application",
+  "tags": [],
+  "targets": {
+    "serve": {
+      "executor": "@nx/js:node",
+      "defaultConfiguration": "development",
+      "dependsOn": ["build"],
+      "options": {
+        "buildTarget": "organization:build",
+        "runBuildTargetDependencies": false
+      },
+      "configurations": {
+        "development": {
+          "buildTarget": "organization:build:development"
+        },
+        "production": {
+          "buildTarget": "organization:build:production"
+        }
+      }
+    }
+  }
+}
